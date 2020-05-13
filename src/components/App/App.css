@@ -1,19 +1,25 @@
 .App {
   height: 100vh;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 500px;
+  width: 100vw;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+  /* max-width: 500px; */
   margin: 0 auto;
+  background-color: rgb(114, 114, 114);
 }
 
 .App__header {
-  padding-left: 20px;
-  padding-right: 20px;
+  
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
 }
 
 .App__main {
-  height: calc(100vh - 70px);
-  overflow: auto;
-  margin-top: 10px;
-  padding-bottom: 40px;
+  /* height: calc(100vh - 70px); */
+  height: 100vh;
+ /* position: absolute;
+ bottom:0; */
+  /* overflow: auto; */
+  /* margin-top: 40px; */
+  /* padding-bottom: 40px; */
 }

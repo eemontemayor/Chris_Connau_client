@@ -3,6 +3,10 @@
   display: flex;
   align-items: normal;
   justify-content: space-between;
+  background-color: transparent;
+  z-index: 2;
+  position: fixed;
+
 }
 
 .Header h1 {
@@ -11,10 +15,13 @@
 
 .Header h1 a {
   text-decoration: none;
+  
 }
 
 .Header a {
-  color: #444;
+  color: rgb(255, 255, 255);
+  /* border-bottom: 1px solid white; */
+  
 }
 
 .Header__not-logged-in {
@@ -31,7 +38,7 @@
     align-items: baseline;
   }
   .Header h1 {
-    font-size: 22pt;
+    font-size: 15pt;
   }
 
   .Header__not-logged-in {

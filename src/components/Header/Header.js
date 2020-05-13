@@ -42,14 +42,21 @@ export default class Header extends Component {
       <nav className='Header'>
         <h1>
           <Link to='/'>
+            
             <FontAwesomeIcon className='green' icon='frog' />
             {' '}
-            Blogful Client
+           C
           </Link>
         </h1>
-        {TokenService.hasAuthToken()
+        <p>
+          <Link to='/gallery'>
+            Gallery
+          </Link>
+        </p>
+
+        {/* {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+          : this.renderLoginLink()} */}
       </nav>
     )
   }

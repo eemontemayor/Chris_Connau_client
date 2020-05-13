@@ -1,0 +1,35 @@
+.LandingPage{
+    height:100vh;
+    width:100vw;
+    background-image: url('../../images/landing.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* transform: scale(1); */
+    transition: all 5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LandingPage_name{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    /* padding:0 40px; */
+    max-width: 700px;
+    /* min-height:fit-content; */
+    height:500px;
+    /* line-height: 500px; */
+    /* border: 1px solid white; */
+    font-size: 3rem;
+    text-align: center;
+    vertical-align: middle;
+    
+
+}
+.LandingPage_name h1{
+    margin: auto;
+    color: white;
+}
