@@ -48,11 +48,11 @@ export default class Header extends Component {
            C
           </Link>
         </h1>
-        <p>
+     
           <Link to='/gallery'>
             Gallery
           </Link>
-        </p>
+      
 
         {/* {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

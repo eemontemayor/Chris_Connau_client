@@ -9,7 +9,8 @@
 }
 
 .App__header {
-  
+  width: 100vw;
+  margin: auto;
   /* padding-left: 20px; */
   /* padding-right: 20px; */
 }
