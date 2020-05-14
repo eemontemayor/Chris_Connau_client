@@ -3,8 +3,14 @@ import ArticleListContext from '../../contexts/ArticleListContext'
 import ArticleApiService from '../../services/article-api-service'
 import { Section } from '../../components/Utils/Utils'
 import ArticleListItem from '../../components/ArticleListItem/ArticleListItem'
-
+import './ArticleListPage.css'
+import Carousel from '../../components/Carousel/Carousel'
 export default class ArticleListPage extends Component {
+  state={
+    images:[]
+}
+
+
   static contextType = ArticleListContext
 
   componentDidMount() {
@@ -12,6 +18,41 @@ export default class ArticleListPage extends Component {
     ArticleApiService.getArticles()
       .then(this.context.setArticleList)
       .catch(this.context.setError)
+
+
+      return fetch(`https://images-api.nasa.gov/search?q=comet`,{
+        headers:{
+            'content-type':'application/json', 
+            
+        }
+    })
+    .then(res => { 
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json().then(img =>{
+            
+            console.log('img', img.collection.items)
+            let imgArr =  img.collection.items.map(i => {
+                
+                let arr = i["links"]
+                
+                if( Array.isArray(arr) ){
+                 
+                    return arr[0]["href"]
+                }
+            }
+            ) 
+
+              this.setState({
+                  images : imgArr
+              })
+          })
+      })
+      .catch(error => {
+        console.log({error})
+      })
+
+
   }
 
   renderArticles() {
@@ -26,12 +67,20 @@ export default class ArticleListPage extends Component {
 
   render() {
     const { error } = this.context
+    const  images = this.state.images
+     
     return (
-      <Section list className='ArticleListPage'>
+      <div  className='ArticleListPage'>
+        <div className='Carousel'>
+     
+        <Carousel images = {images}/>        </div>
+        <ul list className='ArticleList' >
+
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderArticles()}
-      </Section>
+          </ul>
+      </div>
     )
   }
 }

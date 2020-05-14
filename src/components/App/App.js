@@ -33,11 +33,11 @@ class App extends Component {
               path={'/'}
               component={LandingPage}
             />
-          {/* <PublicOnlyRoute
-              exact
-              path={'/'}
+          <PublicOnlyRoute
+              
+              path={'/gallery'}
               component={ArticleListPage} // to do => reconfig to portfolio page
-            /> */}
+            />
            <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}

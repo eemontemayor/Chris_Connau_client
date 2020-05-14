@@ -1,0 +1,79 @@
+
+.carousel__wrapper {
+	border-radius: 5px;
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	
+}
+
+.carousel__controls {
+	display: flex;
+	height: 50px;
+}
+
+.carousel__container {
+	display: flex;
+	height:450px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	align-items: center;
+
+}
+
+.carousel__image {
+	
+	display: none;
+	opacity: 0;
+	/* opacity: 0; */
+	transform: scale(.95);
+	transition: all 3.5s ease-out;
+	
+}
+		.carousel__image.active {
+		display: block;
+			height: 400px;
+			/* width: fit-content; */
+			width: 100%;
+			position: relative;
+			object-fit: contain;
+			left: 0;
+			top: 0;
+			margin: auto;
+			opacity: 1;
+			transform: scale(1);
+		
+
+		}
+
+.carousel__button {
+	background: #f2f2f2;
+	border: 0;
+	color: purple;
+	cursor: pointer;
+	font-size: 1rem;
+	flex-grow: 1;
+	outline: none;
+	padding: 1rem;
+	transition: all .1s ease-out;
+	
+}
+		.carousel__button:hover {
+			background: rgba(#e71b1b, .8);
+			
+		}
+
+.flavor-text {
+	display: block;
+	color: rgba(#fff, .5);
+	font-size: .75rem;
+	font-weight: 300;
+	letter-spacing: 2px;
+	line-height: 1.5;
+	margin: 1rem auto;
+	max-width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	width: 15rem;
+}
