@@ -1,20 +1,12 @@
 
 .carousel__wrapper {
-	border-radius: 5px;
-	height: auto;
-	width: 100%;
-	margin: 0 auto;
-	
+display: inline-flex;
 }
 
-.carousel__controls {
-	display: flex;
-	height: 50px;
-}
+
 
 .carousel__container {
-	display: flex;
-	height:450px;
+
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -34,13 +26,10 @@
 		.carousel__image.active {
 		display: block;
 			height: 400px;
-			/* width: fit-content; */
+		
 			width: 100%;
-			position: relative;
 			object-fit: contain;
-			left: 0;
-			top: 0;
-			margin: auto;
+			max-width:800px;
 			opacity: 1;
 			transform: scale(1);
 		
@@ -48,20 +37,33 @@
 		}
 
 .carousel__button {
-	background: #f2f2f2;
+	background:none;
 	border: 0;
 	color: purple;
 	cursor: pointer;
-	font-size: 1rem;
+	font-size: 2rem;
 	flex-grow: 1;
 	outline: none;
 	padding: 1rem;
 	transition: all .1s ease-out;
-	
+	position: absolute;
+			top:0;
+			bottom:0;
 }
 		.carousel__button:hover {
 			background: rgba(#e71b1b, .8);
 			
+		}
+
+		button.carousel__button.right{
+			
+			right:50px;
+		}
+
+		button.carousel__button.left{
+			/* position: absolute; */
+			left:50px;
+
 		}
 
 .flavor-text {

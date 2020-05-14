@@ -1,5 +1,6 @@
 import React from 'react';
 import './Carousel.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -86,6 +87,7 @@ export default class Carousel extends React.Component{
 		return (
 			
 			<div className="carousel__wrapper">
+					<button className="carousel__button left" onClick={this.showPrevSet}> <FontAwesomeIcon className='red' icon='arrow-circle-left' /></button>
 				<div className="carousel__container">
 					{images.map((img, index) => {
 						let className = 'carousel__image'
@@ -94,10 +96,9 @@ export default class Carousel extends React.Component{
 						return <img src={img} className={className} key={`img-${index}`} />;
 					})}
 				</div>
-				<div className="carousel__controls">
-					<button className="carousel__button" onClick={this.showPrevSet}>back</button>
-					<button className="carousel__button" onClick={this.showNextSet}>next</button>
-				</div>
+				{/* <div className="carousel__controls"> */}
+					<button className="carousel__button right" onClick={this.showNextSet}> <FontAwesomeIcon className='green' icon='arrow-circle-right' /></button>
+				{/* </div> */}
 			
 			</div>
 		

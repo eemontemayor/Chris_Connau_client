@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFrog, faListUl, faListOl, faPenAlt, faGlobeAmericas, faBookOpen, faComment, faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
+import { faFrog, faListUl, faListOl, faPenAlt, faGlobeAmericas, faBookOpen, faComment, faQuoteLeft,faArrowCircleLeft,faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
 import * as serviceWorker from './serviceWorker'
 import { ArticleListProvider } from './contexts/ArticleListContext'
 import { ArticleProvider } from './contexts/ArticleContext'
@@ -18,6 +18,8 @@ library.add(
   faBookOpen, // style: story
   faComment,
   faQuoteLeft,
+  faArrowCircleLeft,
+  faArrowCircleRight
 )
 
 ReactDOM.render(

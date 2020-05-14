@@ -74,12 +74,14 @@ export default class ArticleListPage extends Component {
         <div className='Carousel'>
      
         <Carousel images = {images}/>        </div>
-        <ul list className='ArticleList' >
+        <div list className='ArticleListContainer' >
+      <ul className='ArticleList'>
 
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderArticles()}
           </ul>
+          </div>
       </div>
     )
   }
