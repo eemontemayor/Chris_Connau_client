@@ -1,12 +1,7 @@
 .App {
   height: 100vh;
   width: 100vw;
-
-  /* padding-top: 20px;
-  padding-bottom: 20px; */
-  
-  /* margin: 0 auto; */
-  background-color: rgb(114, 114, 114);
+  background-color: rgb(41, 41, 41);
 }
 
 .App__header {
@@ -14,16 +9,10 @@
   margin: auto;
   height: 50px;
   position: fixed;
-  /* padding-left: 20px; */
-  /* padding-right: 20px; */
+
 }
 
 .App__main {
   height: calc(100vh - 50px);
-  /* height: 100vh; */
- /* position: absolute;
- bottom:0; */
-  /* overflow: auto; */
-  /* margin-top: 40px; */
-  /* padding-bottom: 40px; */
+
 }
