@@ -7,21 +7,17 @@
   background-color: transparent;
   z-index: 2;
   position: fixed;
-
-}
-
-.Header h1 {
-  margin: 0;
-}
-
-.Header h1 a {
-  text-decoration: none;
   
+
 }
 
-.Header a {
-  color: rgb(255, 255, 255);
-  /* border-bottom: 1px solid white; */
+#Header__logo {
+  position: absolute;
+  left:10px;
+  top:10px;
+  border: none;
+  text-decoration: none;
+  color:white;
   
 }
 
@@ -34,14 +30,25 @@
   display: none;
 }
 
+.Header__links{
+ 
+  margin: auto;
+    
+
+
+}
+.Header__links a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+
+  border-bottom: 1px solid white;
+  margin:0 20px;
+}
 @media screen and (min-width: 450px) {
   .Header {
    
     align-items: center;
-    ;
-  }
-  .Header h1 {
-    font-size: 15pt;
+    
   }
 
   .Header__not-logged-in {

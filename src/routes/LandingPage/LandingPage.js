@@ -18,7 +18,12 @@ export default class LandingPage extends Component{
       renderLanding(){
 
         return (
-            `p`
+            
+            <Section className = 'LandingPage_name'>
+            <h1>
+                Chris <br/>Connaughton
+                </h1>
+        </Section>
         )
 
       }
@@ -32,11 +37,6 @@ export default class LandingPage extends Component{
               ? <p className='red'>There was an error, try again</p>
               : this.renderLanding()}
 
-                <Section className = 'LandingPage_name'>
-                    <h1>
-                        Chris <br/>Connaughton
-                        </h1>
-                </Section>
 
 
           </div>

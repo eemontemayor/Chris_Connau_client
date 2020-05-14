@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hyph } from '../Utils/Utils'
 import TokenService from '../../services/token-service'
@@ -12,11 +12,11 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
-        <Link
+        <NavLink
           onClick={this.handleLogoutClick}
           to='/'>
           Logout
-        </Link>
+        </NavLink>
       </div>
     )
   }
@@ -24,15 +24,15 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className='Header__not-logged-in'>
-        <Link
+        <NavLink
           to='/register'>
           Register
-        </Link>
+        </NavLink>
         <Hyph />
-        <Link
+        <NavLink
           to='/login'>
           Log in
-        </Link>
+        </NavLink>
       </div>
     )
   }
@@ -40,19 +40,23 @@ export default class Header extends Component {
   render() {
     return (
       <nav className='Header'>
-        <h1>
-          <Link to='/'>
+       
+          <NavLink to='/' id = 'Header__logo'>
             
             <FontAwesomeIcon className='green' icon='frog' />
             {' '}
            C
-          </Link>
-        </h1>
-     
-          <Link to='/gallery'>
+          </NavLink>
+       
+        <div className = 'Header__links'>
+
+          <NavLink to='/gallery'>
             Gallery
-          </Link>
-      
+          </NavLink>
+          <NavLink to='/masonry'>
+            Masonry
+          </NavLink>
+        </div>
 
         {/* {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
