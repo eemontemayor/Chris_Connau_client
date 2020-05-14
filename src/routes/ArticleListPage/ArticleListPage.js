@@ -42,6 +42,7 @@ export default class ArticleListPage extends Component {
                 }
             }
             ) 
+            imgArr = imgArr.slice(0,10)
 
               this.setState({
                   images : imgArr
@@ -65,6 +66,16 @@ export default class ArticleListPage extends Component {
     )
   }
 
+
+
+renderGalleryList(arr){
+
+  return arr.map((img, index) => {
+    return <img src={img} className='GalleryListItem' key={`img-${index}`} />;
+					})
+}
+
+
   render() {
     const { error } = this.context
     const  images = this.state.images
@@ -80,6 +91,12 @@ export default class ArticleListPage extends Component {
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderArticles()}
+          </ul>
+
+          <ul className ='GalleryList' >
+          {error
+          ? <p className='red'>There was an error, try again</p>
+          : this.renderGalleryList(images)}
           </ul>
           </div>
       </div>

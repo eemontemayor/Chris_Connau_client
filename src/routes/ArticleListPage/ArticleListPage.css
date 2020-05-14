@@ -22,7 +22,7 @@
 
 }
 .ArticleListContainer{
-    
+    overflow-x: auto;
  overflow-y: auto;
  grid-area: list;
 }
@@ -33,4 +33,16 @@
     border: 1px solid white;
     justify-content: space-evenly;
 
+}
+.GalleryList{
+    width: 100%;
+    display: inline-flex;
+    padding: 5px;
+    border: 1px solid white;
+    justify-content: space-evenly;
+}
+.GalleryListItem{
+    
+    margin: 5px;
+    height:100px;
 }

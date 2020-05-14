@@ -1,9 +1,10 @@
+'use strict;'
 import React from 'react';
 import './Carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-
+var x;
 
 
 
@@ -48,7 +49,7 @@ export default class Carousel extends React.Component{
 	
 	componentDidMount() {
 		window.addEventListener('keyup', this.onKeyUp);
-	
+		this.rotateImg(true)
 		
 	
 
@@ -56,6 +57,8 @@ export default class Carousel extends React.Component{
 	
 	componentWillUnmount() {
 		window.removeEventListener('keyup', this.onKeyUp);
+		this.rotateImg(false)
+
 	}
 	
 	onKeyUp = (e) => {
@@ -78,6 +81,21 @@ export default class Carousel extends React.Component{
 		const currentIndex = (this.state.currentIndex + 1) % this.props.images.length;
 		this.setState({ currentIndex });
 	}
+
+
+	rotateImg(bool){
+
+		const timer = setInterval(this.showNextSet,7000)
+
+		if(bool){
+
+			return timer
+		} 
+		else{
+			clearInterval(timer)
+		}
+	}
+
 
 	render() {
 		const { images } = this.props;
