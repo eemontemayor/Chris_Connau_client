@@ -31,4 +31,6 @@
     display: inline-flex;
     padding: 5px;
     border: 1px solid white;
+    justify-content: space-evenly;
+
 }
