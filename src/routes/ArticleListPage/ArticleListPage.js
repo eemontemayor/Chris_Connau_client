@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ArticleListContext from '../../contexts/ArticleListContext'
 import ArticleApiService from '../../services/article-api-service'
+import CarouselApiService from '../../services/carousel-api-service'
 import { Section } from '../../components/Utils/Utils'
 import ArticleListItem from '../../components/ArticleListItem/ArticleListItem'
 import './ArticleListPage.css'
@@ -19,39 +20,9 @@ export default class ArticleListPage extends Component {
       .then(this.context.setArticleList)
       .catch(this.context.setError)
 
+    CarouselApiService.getCarouselPics()
+    .then(res => console.log('res', res))
 
-      return fetch(`https://images-api.nasa.gov/search?q=comet`,{
-        headers:{
-            'content-type':'application/json', 
-            
-        }
-    })
-    .then(res => { 
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json().then(img =>{
-            
-            console.log('img', img.collection.items)
-            let imgArr =  img.collection.items.map(i => {
-                
-                let arr = i["links"]
-                
-                if( Array.isArray(arr) ){
-                 
-                    return arr[0]["href"]
-                }
-            }
-            ) 
-            imgArr = imgArr.slice(0,10)
-
-              this.setState({
-                  images : imgArr
-              })
-          })
-      })
-      .catch(error => {
-        console.log({error})
-      })
 
 
   }
@@ -85,7 +56,9 @@ renderGalleryList(arr){
         <div className='Carousel'>
      
         <Carousel images = {images}/>        </div>
-        <div list className='ArticleListContainer' >
+        <div 
+        // list 
+        className='ArticleListContainer' >
       <ul className='ArticleList'>
 
         {error
