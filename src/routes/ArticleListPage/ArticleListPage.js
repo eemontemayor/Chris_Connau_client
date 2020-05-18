@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import ArticleListContext from "../../contexts/ArticleListContext";
 import ArticleApiService from "../../services/article-api-service";
 import CarouselApiService from "../../services/carousel-api-service";
+
 import { Section } from "../../components/Utils/Utils";
 import ArticleListItem from "../../components/ArticleListItem/ArticleListItem";
 import "./ArticleListPage.css";
 import Carousel from "../../components/Carousel/Carousel";
 export default class ArticleListPage extends Component {
   state = {
-    images: [],
+    carouselImages: [],
+    galleryImages:[]
   };
 
   static contextType = ArticleListContext;
@@ -19,11 +21,21 @@ export default class ArticleListPage extends Component {
       .then(this.context.setArticleList)
       .catch(this.context.setError);
 
-  let imgArr = CarouselApiService.getCarouselPics()
-    console.log('img', imgArr)
+ CarouselApiService.getCarouselPics()
+ .then(res =>{
+
   this.setState({
-    images:imgArr
+    carouselImages:res
   })
+ })
+
+ CarouselApiService.getGalleryPics()
+ .then(res =>{
+  console.log('res from getGallPics', res || 'nope')
+  this.setState({
+    galleryImages:res
+  })
+ })
 
   }
 
@@ -35,19 +47,26 @@ export default class ArticleListPage extends Component {
   }
 
   renderGalleryList(arr) {
-    return arr.map((img, index) => {
-      return <img src={img} className="GalleryListItem" key={`img-${index}`} />;
-    });
+    console.log('arr', arr)
+
+    if(arr.length > 0){
+
+      
+      return arr.map((img, index) => {
+        return <img src={img} className="GalleryListItem" key={`img-${index}`} />;
+      });
+    }
   }
 
   render() {
     const { error } = this.context;
-    const images = this.state.images;
-
+    const carImages = this.state.carouselImages;
+    const gallImages = this.state.galleryImages;
+   
     return (
       <div className="ArticleListPage">
         <div className="Carousel">
-          <Carousel images={images} />{" "}
+          <Carousel images={carImages} />{" "}
         </div>
         <div
           // list
@@ -61,13 +80,13 @@ export default class ArticleListPage extends Component {
             )}
           </ul>
 
-          {/* <ul className="GalleryList">
+          <ul className="GalleryList">
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (
-              this.renderGalleryList(images)
+              this.renderGalleryList(gallImages)
             )}
-          </ul> */}
+          </ul>
         </div>
       </div>
     );

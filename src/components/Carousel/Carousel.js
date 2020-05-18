@@ -56,8 +56,8 @@ export default class Carousel extends React.Component{
 	}
 	
 	componentWillUnmount() {
-		window.removeEventListener('keyup', this.onKeyUp);
 		this.rotateImg(false)
+		window.removeEventListener('keyup', this.onKeyUp);
 
 	}
 	
