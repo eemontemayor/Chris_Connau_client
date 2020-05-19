@@ -9,7 +9,7 @@
   margin: auto;
   height: 50px;
   position: fixed;
-
+  z-index: 3;
 }
 
 .App__main {

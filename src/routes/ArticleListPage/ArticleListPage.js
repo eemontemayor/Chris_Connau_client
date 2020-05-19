@@ -46,12 +46,12 @@ export default class ArticleListPage extends Component {
     ));
   }
 
-  renderGalleryList(arr) {
+  renderGalleryList(arr = []) {
     console.log('arr', arr)
 
-    if(arr.length > 0){
+    if(arr.length){
+// console.log('arr', arr)
 
-      
       return arr.map((img, index) => {
         return <img src={img} className="GalleryListItem" key={`img-${index}`} />;
       });
@@ -72,11 +72,19 @@ export default class ArticleListPage extends Component {
           // list
           className="ArticleListContainer"
         >
-          <ul className="ArticleList">
+          {/* <ul className="ArticleList">
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (
               this.renderArticles()
+            )}
+          </ul> */}
+
+          <ul className="GalleryList">
+            {error ? (
+              <p className="red">There was an error, try again</p>
+            ) : (
+              this.renderGalleryList(gallImages[0])
             )}
           </ul>
 
@@ -84,7 +92,7 @@ export default class ArticleListPage extends Component {
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (
-              this.renderGalleryList(gallImages)
+              this.renderGalleryList(gallImages[1])
             )}
           </ul>
         </div>

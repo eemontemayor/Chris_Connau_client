@@ -1,16 +1,17 @@
 .ArticleListPage{
   
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    height: fit-content;
     width:100%;
     position: absolute;
     bottom:0;
     display: grid;
-    grid-template-rows: 400px 1fr ;
+    grid-template-rows: 350px 1fr ;
     grid-template-areas: 
     'carousel'
     'list';
    
-    overflow-x: hidden;
+    
 }
 
 
@@ -22,8 +23,8 @@
 
 }
 .ArticleListContainer{
-    overflow-x: auto;
- overflow-y: auto;
+     overflow-x: auto;
+ overflow-y: auto; 
  grid-area: list;
 }
 
@@ -37,6 +38,8 @@
 .GalleryList{
     width: 100%;
     display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 5px;
     border: 1px solid white;
     justify-content: space-evenly;
@@ -45,4 +48,8 @@
     
     margin: 5px;
     height:100px;
+}
+.GalleryListItem:hover{
+  opacity: .5;
+    cursor: pointer;
 }
