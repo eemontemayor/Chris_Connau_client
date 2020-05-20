@@ -29,11 +29,23 @@
     font-size: 3rem;
     text-align: center;
     vertical-align: middle;
+    /* border: 1px solid white; */
+  
+    /* box-shadow:
+  0 2.3px 1.9px rgba(0, 0, 0, 0.044),
+  0 5.4px 4.3px rgba(0, 0, 0, 0.063),
+  0 9.7px 7.7px rgba(0, 0, 0, 0.078),
+  0 16.1px 12.8px rgba(0, 0, 0, 0.092),
+  0 26.5px 21.2px rgba(0, 0, 0, 0.107),
+  0 46.2px 37px rgba(0, 0, 0, 0.126),
+  0 100px 80px rgba(0, 0, 0, 0.17)
+; */
     
 
 }
 .LandingPage_name h1{
     /* z-index: 3; */
     margin: auto;
-    color: white;
+    color: rgb(226, 226, 226);
+    text-shadow: 5px 10px 10px #c4b59d,0 -1px 1px #fff;
 }
