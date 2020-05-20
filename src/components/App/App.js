@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 // import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import ArticleListPage from '../../routes/ArticleListPage/ArticleListPage'
 import ArticlePage from '../../routes/ArticlePage/ArticlePage'
+import PicturePage from '../../routes/PicturePage/PicturePage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import LandingPage from '../../routes/LandingPage/LandingPage'
@@ -34,10 +35,17 @@ class App extends Component {
               component={LandingPage}
             />
           <PublicOnlyRoute
-              
+              exact
               path={'/gallery'}
               component={ArticleListPage} // to do => reconfig to portfolio page
             />
+
+<PublicOnlyRoute
+              
+              path={'/gallery/picture/:picId'}
+              component={PicturePage} // to do => reconfig to portfolio page
+            />
+
            <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}

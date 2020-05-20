@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ArticleListContext from "../../contexts/ArticleListContext";
 import ArticleApiService from "../../services/article-api-service";
 import CarouselApiService from "../../services/carousel-api-service";
-
+import { Link } from 'react-router-dom'
 import { Section } from "../../components/Utils/Utils";
 import ArticleListItem from "../../components/ArticleListItem/ArticleListItem";
 import "./ArticleListPage.css";
@@ -10,7 +10,8 @@ import Carousel from "../../components/Carousel/Carousel";
 export default class ArticleListPage extends Component {
   state = {
     carouselImages: [],
-    galleryImages:[]
+    galleryImages: [],
+
   };
 
   static contextType = ArticleListContext;
@@ -21,22 +22,18 @@ export default class ArticleListPage extends Component {
       .then(this.context.setArticleList)
       .catch(this.context.setError);
 
- CarouselApiService.getCarouselPics()
- .then(res =>{
+    CarouselApiService.getCarouselPics().then((res) => {
+      this.setState({
+        carouselImages: res,
+      });
+    });
 
-  this.setState({
-    carouselImages:res
-  })
- })
-
- CarouselApiService.getGalleryPics()
- .then(res =>{
-  console.log('res from getGallPics', res || 'nope')
-  this.setState({
-    galleryImages:res
-  })
- })
-
+    CarouselApiService.getGalleryPics().then((res) => {
+      // console.log('res from getGallPics', res || 'nope')
+      this.setState({
+        galleryImages: res,
+      });
+    });
   }
 
   renderArticles() {
@@ -46,55 +43,77 @@ export default class ArticleListPage extends Component {
     ));
   }
 
-  renderGalleryList(arr = []) {
-    console.log('arr', arr)
-
-    if(arr.length){
-// console.log('arr', arr)
+  renderGalleryList(arr = [], category='') {
+    if (arr.length) {
+    
 
       return arr.map((img, index) => {
-        return <img src={img} className="GalleryListItem" key={`img-${index}`} />;
+        let key = `${category}_${index}`
+      
+        return (
+          <Link to={`/gallery/picture/${key}`}  key={key}>
+          <li
+            className="GalleryListItem"
+            onClick={()=>this.handleImgClick(key)}
+            key={key}
+            >
+
+            
+            <img src={img} alt="alt-ph" />
+          </li>
+            </Link>
+        );
       });
     }
   }
+  handleImgClick = (key) => {
+    console.log('key', key)
+
+ 
+  };
 
   render() {
     const { error } = this.context;
     const carImages = this.state.carouselImages;
     const gallImages = this.state.galleryImages;
-   
+
     return (
       <div className="ArticleListPage">
+      {this.state.viewImage &&  <div className = 'ViewImageContainer'></div>}
         <div className="Carousel">
           <Carousel images={carImages} />{" "}
         </div>
         <div
-          // list
           className="ArticleListContainer"
+          list ='true'
         >
-          {/* <ul className="ArticleList">
+          <ul className="ArticleList">
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (
               this.renderArticles()
             )}
-          </ul> */}
-
-          <ul className="GalleryList">
-            {error ? (
-              <p className="red">There was an error, try again</p>
-            ) : (
-              this.renderGalleryList(gallImages[0])
-            )}
           </ul>
-
-          <ul className="GalleryList">
-            {error ? (
-              <p className="red">There was an error, try again</p>
-            ) : (
-              this.renderGalleryList(gallImages[1])
-            )}
-          </ul>
+          <Section>
+            <h2 className="GalleryListTitle">Nature</h2>
+            <ul className="GalleryList">
+              {error ? (
+                <p className="red">There was an error, try again</p>
+              ) : (
+                this.renderGalleryList(gallImages[0],'nature')
+              )}
+            </ul>
+          </Section>
+          <Section>
+            <h2 className="GalleryListTitle">Architecture</h2>
+            <ul className="GalleryList">
+              {error ? (
+                <p className="red">There was an error, try again</p>
+              ) : (
+                this.renderGalleryList(gallImages[1],'architecture')
+              )}
+            </ul>
+          </Section>
         </div>
       </div>
     );

@@ -4,7 +4,7 @@ import './Carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-var x;
+// var x;
 
 
 
@@ -111,7 +111,7 @@ export default class Carousel extends React.Component{
 						let className = 'carousel__image'
 						if (index === currentIndex) className += ' active';
 						
-						return <img src={img} className={className} key={`img-${index}`} />;
+						return <img src={img} className={className} key={`img-${index}`} alt = 'carousel img alt -ph' />;
 					})}
 				</div>
 				{/* <div className="carousel__controls"> */}

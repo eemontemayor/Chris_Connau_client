@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hyph } from '../Utils/Utils'
-import TokenService from '../../services/token-service'
+// import TokenService from '../../services/token-service'
 import './Header.css'
 
 export default class Header extends Component {

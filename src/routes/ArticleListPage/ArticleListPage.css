@@ -16,6 +16,7 @@
 
 
 .Carousel{
+    margin: 40px;
     grid-area: carousel;
     position: fixed;
     width: 100%;
@@ -23,9 +24,9 @@
 
 }
 .ArticleListContainer{
-     overflow-x: auto;
- overflow-y: auto; 
+overflow: auto;
  grid-area: list;
+ padding: 0 50px;
 }
 
 .ArticleList{
@@ -40,16 +41,27 @@
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 10px 50px;
     border: 1px solid white;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin: auto;
+    list-style: none;
 }
-.GalleryListItem{
+.GalleryListItem {
     
-    margin: 5px;
-    height:100px;
+    margin: 5px 15px;
+
 }
 .GalleryListItem:hover{
   opacity: .5;
     cursor: pointer;
+}
+.GalleryListTitle{
+    color: white;
+    margin: 25px 0px 0px;
+}
+ .GalleryListItem img{
+    height:100px;
+    /* object-fit: ; */
+    /* opacity:.2; */
 }

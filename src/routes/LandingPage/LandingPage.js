@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ArticleListContext from '../../contexts/ArticleListContext'
 import ArticleApiService from '../../services/article-api-service'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Section } from '../../components/Utils/Utils'
 import './LandingPage.css'
 
