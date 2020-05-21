@@ -14,9 +14,10 @@ export default class PicturePage extends Component {
 
 
       componentDidMount() {
-        const { picId } = this.props.match.params
+        const { category, picId } = this.props.match.params
+        
     console.log('here from pic page')
-        CarouselApiService.getBigPicture(picId)
+        CarouselApiService.getBigPicture(category,picId)
         .then(res =>{
             this.setState({
                 imgUrl:res

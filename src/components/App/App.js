@@ -42,7 +42,7 @@ class App extends Component {
 
 <PublicOnlyRoute
               
-              path={'/gallery/picture/:picId'}
+              path={'/gallery/:category/:picId'}
               component={PicturePage} // to do => reconfig to portfolio page
             />
 

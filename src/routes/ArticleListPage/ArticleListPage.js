@@ -45,13 +45,13 @@ export default class ArticleListPage extends Component {
 
   renderGalleryList(arr = [], category='') {
     if (arr.length) {
-    
+    console.log('category', category)
 
       return arr.map((img, index) => {
-        let key = `${category}_${index}`
+        let key = `${index}`
       
         return (
-          <Link to={`/gallery/picture/${key}`}  key={key}>
+          <Link to={`/gallery/${category}/${key}`}  key={key}>
           <li
             className="GalleryListItem"
             onClick={()=>this.handleImgClick(key)}
