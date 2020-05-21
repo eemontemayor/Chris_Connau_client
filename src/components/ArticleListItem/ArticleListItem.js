@@ -6,10 +6,31 @@ import StyleIcon from '../StyleIcon/StyleIcon'
 import './ArticleListItem.css'
 
 export default class ArticleListItem extends Component {
+state = {
+  img_url:''
+
+}
+ 
+
+
   render() {
     const { article } = this.props
+ 
+    let thumbnail_url = article.img_url.split('').slice(0,-4).join('').concat('.th.jpg')
+
+
+
+
+
+    
+
+
     return (
       <Link to={`/article/${article.id}`} className='ArticleListItem'>
+
+      <img className = 'ArticleListItem_img' src = {thumbnail_url}/>
+      <div className = 'ArticleListItem_info'>
+
         <header className='ArticleListItem__header'>
           <h2 className='ArticleListItem__heading'>
             {article.title}
@@ -24,6 +45,7 @@ export default class ArticleListItem extends Component {
           </>}
           <ArticleCommentCount article={article} />
         </footer>
+      </div>
       </Link>
     )
   }

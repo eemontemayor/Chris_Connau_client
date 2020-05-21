@@ -4,17 +4,48 @@
   border-right: 1px solid #f5f5f538;
   font-size: smaller;
   border-left: 1px solid #f5f5f538;
-  display: block;
+
   padding: 5px;
   margin: 0 10px;
-  text-align: left;
+  text-align: center;
   width: 100%;
+  min-width:175px;
   text-decoration: none;
+  position: relative;
 }
 
 .ArticleListItem:hover {
   cursor: pointer;
   background-color: #f7f8f9;
+}
+img.ArticleListItem_img {
+  margin: auto;
+  height:150px;
+  z-index:6;
+}
+
+img.ArticleListItem_img:hover {
+  opacity:.4;
+
+}
+
+.ArticleListItem_info {
+  padding: 20px;
+  height:150px;
+  width: 150px;
+  z-index:2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  
+}
+
+
+.ArticleListItem_info:hover {
+ 
+  opacity: 1;
+
 }
 
 .ArticleListItem,

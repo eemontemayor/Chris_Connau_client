@@ -6,8 +6,13 @@ import { NiceDate, Hyph, Section } from '../../components/Utils/Utils'
 import StyleIcon from '../../components/StyleIcon/StyleIcon'
 import CommentForm from '../../components/CommentForm/CommentForm'
 import './ArticlePage.css'
+import { closestTo } from 'date-fns'
 
 export default class ArticlePage extends Component {
+state ={
+  viewBig:false
+}
+
   static defaultProps = {
     match: { params: {} },
   }
@@ -31,8 +36,15 @@ export default class ArticlePage extends Component {
 
   renderArticle() {
     const { article, comments } = this.context
+
+    let med_url = article.img_url.split('').slice(0,-4).join('').concat('.md.jpg')
+
+  
+
+    
     return <>
       <h2>{article.title}</h2>
+      <img src = {med_url} style={{height:'400px'}}/>
       <p>
         <ArticleStyle article={article} />
         {article.author.id && <>
@@ -47,6 +59,14 @@ export default class ArticlePage extends Component {
       <CommentForm />
     </>
   }
+
+
+  handleImgClick = (key) => {
+    console.log('key', key)
+
+ 
+  };
+
 
   render() {
     const { error, article } = this.context

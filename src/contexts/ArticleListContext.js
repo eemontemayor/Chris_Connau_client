@@ -16,6 +16,7 @@ export class ArticleListProvider extends Component {
   };
 
   setArticleList = articleList => {
+  
     this.setState({ articleList })
   }
 
