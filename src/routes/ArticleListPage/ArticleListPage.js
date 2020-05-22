@@ -11,7 +11,7 @@ export default class ArticleListPage extends Component {
   state = {
     carouselImages: [],
     galleryImages: [],
-
+    listCategories:[]
   };
 
   static contextType = ArticleListContext;
@@ -19,7 +19,23 @@ export default class ArticleListPage extends Component {
   componentDidMount() {
     this.context.clearError();
     ArticleApiService.getArticles()
-      .then(this.context.setArticleList)
+      .then(list =>{
+        // console.log('list', list)
+        let group = list.reduce((r, a) => {
+         
+          r[a.style] = [...r[a.style] || [], a];
+          return r;
+         }, {});
+  
+         let listCategories=[]
+    
+        for(const k in group){
+      listCategories.push(k)
+        }
+        this.setState({listCategories},()=>{
+      
+          this.context.setArticleList(list)})
+        })
       .catch(this.context.setError);
 
     CarouselApiService.getCarouselPics().then((res) => {
@@ -36,16 +52,23 @@ export default class ArticleListPage extends Component {
     });
   }
 
-  renderArticles() {
+  renderArticles(category=[]) {
     const { articleList = [] } = this.context;
-    return articleList.map((article) => (
-      <ArticleListItem key={article.id} article={article} />
-    ));
+  
+
+      return articleList.map((article) => (
+        <ArticleListItem key={article.id} article={article} />
+        ));
+      
+      
   }
+
+
+
 
   renderGalleryList(arr = [], category='') {
     if (arr.length) {
-    console.log('category', category)
+    // console.log('category', category)
 
       return arr.map((img, index) => {
         let key = `${index}`
@@ -54,7 +77,7 @@ export default class ArticleListPage extends Component {
           <Link to={`/gallery/${category}/${key}`}  key={key}>
           <li
             className="GalleryListItem"
-            onClick={()=>this.handleImgClick(key)}
+        
             key={key}
             >
 
@@ -66,11 +89,7 @@ export default class ArticleListPage extends Component {
       });
     }
   }
-  handleImgClick = (key) => {
-    console.log('key', key)
 
- 
-  };
 
   render() {
     const { error } = this.context;
@@ -93,8 +112,14 @@ export default class ArticleListPage extends Component {
             ) : (
               this.renderArticles()
             )}
+           
           </ul>
-          <Section>
+
+
+    
+       
+
+          {/* <Section>
             <h2 className="GalleryListTitle">Nature</h2>
             <ul className="GalleryList">
               {error ? (
@@ -113,7 +138,7 @@ export default class ArticleListPage extends Component {
                 this.renderGalleryList(gallImages[1],'architecture')
               )}
             </ul>
-          </Section>
+          </Section> */}
         </div>
       </div>
     );

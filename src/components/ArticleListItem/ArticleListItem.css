@@ -8,7 +8,7 @@
   padding: 5px;
   margin: 0 10px;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   min-width:175px;
   text-decoration: none;
   position: relative;
@@ -21,11 +21,13 @@
 img.ArticleListItem_img {
   margin: auto;
   height:150px;
-  z-index:6;
+  z-index:4;
+  opacity:.9;
 }
 
-img.ArticleListItem_img:hover {
-  opacity:.4;
+.ArticleListItem_img:hover {
+  opacity:.1;
+  display: none;
 
 }
 
@@ -37,7 +39,7 @@ img.ArticleListItem_img:hover {
   position: absolute;
   top: 0;
   bottom: 0;
-
+  opacity: 0;
   
 }
 

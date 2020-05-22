@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 const ArticleListContext = React.createContext({
   articleList: [],
+  categories:[],
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -16,7 +17,7 @@ export class ArticleListProvider extends Component {
   };
 
   setArticleList = articleList => {
-  
+
     this.setState({ articleList })
   }
 
