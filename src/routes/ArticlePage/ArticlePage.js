@@ -32,6 +32,7 @@ state ={
 
   componentWillUnmount() {
     this.context.clearArticle()
+
   }
 
   renderArticle() {
@@ -44,7 +45,10 @@ state ={
     
     return <>
       <h2>{article.title}</h2>
-      <img src = {med_url} style={{height:'400px'}}/>
+  
+      {!this.state.viewBig  ? <>    <img className = 'image_med'onClick = {this.handleImgClick} src = {med_url} style={{width:'50vw'}}/>
+      <Section className = "Article_data">
+
       <p>
         <ArticleStyle article={article} />
         {article.author.id && <>
@@ -55,14 +59,20 @@ state ={
         <NiceDate date={article.date_created} />
       </p>
       <ArticleContent article={article} />
+      </Section>
       <ArticleComments comments={comments} />
       <CommentForm />
-    </>
+        </> : <img className = 'image_lrg' onClick = {this.handleImgClick} src = {article.img_url} style={{height:'1080px', margin:'20px'}}/>
+
+}
+</>
+
   }
-
-
-  handleImgClick = (key) => {
-    console.log('key', key)
+  handleImgClick = () => {
+    console.log('here')
+    this.setState({
+      viewBig:!this.state.viewBig
+    },()=>{console.log('this.state', this.state)})
 
  
   };
@@ -81,9 +91,9 @@ state ={
       content = this.renderArticle()
     }
     return (
-      <Section className='ArticlePage'>
+      <div className='ArticlePage'>
         {content}
-      </Section>
+      </div>
     )
   }
 }

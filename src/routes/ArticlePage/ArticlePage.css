@@ -4,6 +4,40 @@
   padding: 0;
 }
 
+.ArticlePage{
+  height: calc(100vh - 50px);
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  padding:50px;
+}
+
+.image_med{
+
+
+}
+.image_med:hover{
+  cursor: pointer;
+  opacity: .8;
+
+}
+.image_lrg:hover{
+  cursor: pointer;
+  opacity: .8;
+
+}
+
+.Article_data{
+float: right;
+  width: 35vw;
+}
+
+.ArticlePage__content{
+  color:white;
+  float: right;
+
+
+}
 .ArticlePage__comment {
   position: relative;
 }
