@@ -1,7 +1,7 @@
 .App {
   min-height: 100vh;
   height:auto;
-  width: 100%;
+  width: 100vw;
   
   background-color: rgb(14, 14, 14);
 }
@@ -16,5 +16,5 @@
 
 .App__main {
   height: calc(100vh - 50px);
-
+  width: 100vw;
 }

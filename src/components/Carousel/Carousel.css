@@ -54,7 +54,7 @@ overflow: hidden;
 			left:-100px;  */
 			object-fit: contain;
 	
-			transform: scale(.9)translateX(-200px);
+			transform: scale(.9)translateX(-250px);
 			transition:all 3s ease;
 			z-index: 1;
 			opacity:.5
@@ -67,7 +67,7 @@ overflow: hidden;
 		
 			object-fit: contain;
 			
-			transform: scale(.9)translateX(200px) ;
+			transform: scale(.9)translateX(250px) ;
 			transition:all 3s ease;
 			z-index: 1;
 			opacity:.5
