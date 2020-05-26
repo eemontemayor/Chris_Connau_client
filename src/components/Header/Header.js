@@ -43,9 +43,9 @@ export default class Header extends Component {
        
           <NavLink to='/' id = 'Header__logo'>
             
-            <FontAwesomeIcon className='green' icon='frog' />
+            <FontAwesomeIcon className='white' icon='frog' size='lg'/>
             {' '}
-           C
+           
           </NavLink>
        
         <div className = 'Header__links'>

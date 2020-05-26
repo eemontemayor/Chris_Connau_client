@@ -30,7 +30,7 @@ width: 100%;
 background-color: black;
  grid-area: list;
  padding: 0 50px;
- z-index: 4;
+ /* z-index: 4; */
  
 }
 

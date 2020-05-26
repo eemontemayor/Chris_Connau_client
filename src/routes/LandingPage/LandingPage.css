@@ -3,7 +3,7 @@
     width:100vw;
     background-image: url('../../images/landing_forum.jpg');
    background-color: grey;
-   /* background-blend-mode: luminosity; */
+   background-blend-mode: multiply;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -47,5 +47,6 @@
     /* z-index: 3; */
     margin: auto;
     color: rgb(226, 226, 226);
-    text-shadow: 5px 10px 10px #c4b59d,0 -1px 1px #fff;
+    /* text-shadow: 5px 10px 10px #c4b59d,0 -1px 1px #fff; */
+    text-shadow: 3px 3px 11px #C4B41B, -1px -1px #F84;
 }

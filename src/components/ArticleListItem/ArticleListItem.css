@@ -22,7 +22,7 @@ img.ArticleListItem_img {
   margin: auto;
   height:150px;
   z-index:4;
-  opacity:.9;
+  opacity:.7;
 }
 
 .ArticleListItem_img:hover {
