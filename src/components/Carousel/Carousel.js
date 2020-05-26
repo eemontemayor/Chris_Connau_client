@@ -85,7 +85,7 @@ export default class Carousel extends React.Component{
 
 	rotateImg(bool){
 
-		const timer = setInterval(this.showNextSet,7000)
+		const timer = setInterval(this.showNextSet,15000)
 
 		if(bool){
 
