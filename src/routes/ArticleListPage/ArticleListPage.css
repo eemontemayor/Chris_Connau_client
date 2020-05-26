@@ -5,7 +5,7 @@
     width:100%;
     position: relative;
     bottom:0;
-    overflow: scroll;
+    /* overflow: scroll; */
     display: grid;
     grid-template-rows: 400px 1fr ;
     grid-template-areas: 
@@ -30,7 +30,7 @@ width: 100%;
 
 background-color: black;
  grid-area: list;
- padding: 0 50px;
+ /* padding: 0 50px; */
  z-index: 4;
  
 }
