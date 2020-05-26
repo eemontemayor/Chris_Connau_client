@@ -1,14 +1,15 @@
 
 .carousel__wrapper {
-display: inline-flex;
+display: flex;
+flex-direction: row;
 }
 
 
 
 .carousel__container {
-
+	height: 400px;
 	width: 100%;
-	position: relative;
+	/* position: relative; */
 	overflow: hidden;
 	align-items: center;
 
@@ -18,22 +19,49 @@ display: inline-flex;
 	
 	display: none;
 	opacity: 0;
+	height: 375px;
+	position: relative;
+	/* object-fit: contain; */
+	/* transform: scale(.95); */
+	/* transition: all 1s linear; */
 
-	transform: scale(.95);
-	transition: all 1.5s linear;
 	
 }
 		.carousel__image.active {
-		display: block;
-			height: 300px;
-		
+		display: inline-block;
+			height: 400px;
+			
 			width: 100%;
 			object-fit: contain;
-			max-width:800px;
+	
 			opacity: 1;
-			transform: scale(1);
-		
-		
+	
+			z-index:5;
+			transform: scale(1.2);
+			transition: all 3.5s ease-out;
+		}
+		.carousel__image.prev {
+			/* display:inline-block; */
+			height: 300px;
+			position: relative;
+			right:200px;
+			/* transform: scale(.8); */
+			transition:all 2s ease-out;
+			z-index: -2;
+			opacity:.2
+
+		}
+		.carousel__image.next {
+			/* display:inline-block; */
+			position: relative;
+			left:200px;
+			/* display:inline-block; */
+			height: 300px;
+			/* transform: scale(.8); */
+			transition:all 2s ease-out;
+			z-index: -2;
+			opacity:.2
+
 		}
 
 .carousel__button {

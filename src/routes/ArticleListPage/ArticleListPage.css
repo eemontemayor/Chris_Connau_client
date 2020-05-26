@@ -7,7 +7,7 @@
     bottom:0;
     overflow: scroll;
     display: grid;
-    grid-template-rows: 350px 1fr ;
+    grid-template-rows: 400px 1fr ;
     grid-template-areas: 
     'carousel'
     'list';
@@ -22,6 +22,7 @@
     position: fixed;
     width: 100%;
     text-align: center;
+    height: 400px;
 
 }
 .ArticleListContainer{
