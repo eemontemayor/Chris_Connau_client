@@ -52,13 +52,18 @@ export default class ArticleListPage extends Component {
     });
   }
 
-  renderArticles(category=[]) {
+  renderArticles(category='') {
     const { articleList = [] } = this.context;
-  
+    
+    
+    if(category.length > 0){
 
-      return articleList.map((article) => (
+      // console.log('category', category)
+      
+      return articleList.filter(i => i.style === category).map((article) => (
         <ArticleListItem key={article.id} article={article} />
         ));
+      }
       
       
   }
@@ -106,16 +111,25 @@ export default class ArticleListPage extends Component {
           className="ArticleListContainer"
           list ='true'
         >
-          <ul className="ArticleList">
+
+<h3 className = 'ArticleList_Title'>Nature</h3>
+          <ul className="ArticleList" id='Nature'>
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (
-              this.renderArticles()
+              this.renderArticles('Nature')
             )}
            
           </ul>
-
-
+          <h3 className = 'ArticleList_Title'>Architecture</h3>
+          <ul className="ArticleList" id='Architecture'>
+            {error ? (
+              <p className="red">There was an error, try again</p>
+            ) : (
+              this.renderArticles('Architecture')
+            )}
+           
+          </ul>
     
        
 

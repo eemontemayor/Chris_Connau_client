@@ -30,10 +30,13 @@ width: 100%;
 background-color: black;
  grid-area: list;
  padding: 0 50px;
- /* z-index: 4; */
+ z-index: 4;
  
 }
-
+.ArticleList_Title{
+    color: white;
+    margin: 5px;
+}
 .ArticleList{
    
     display: inline-flex;
@@ -41,7 +44,8 @@ background-color: black;
     flex-wrap: wrap;
    
     border-top: 1px solid white;
-    
+    margin: 0px auto 20px;
+    padding: 0 50px;
 
 }
 .GalleryList{

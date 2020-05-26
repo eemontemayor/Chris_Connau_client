@@ -1,12 +1,12 @@
 .ArticleListItem {
   background: none;
   border: 0;
-  border-right: 1px solid #f5f5f538;
+  /* border-right: 1px solid #f5f5f538; */
   font-size: smaller;
-  border-left: 1px solid #f5f5f538;
+  /* border-left: 1px solid #f5f5f538; */
 
-  padding: 5px;
-  margin: 0 10px;
+  /* padding: 5px; */
+  margin: 5px 5px 0;
   text-align: center;
   /* width: 100%; */
   min-width:175px;
@@ -32,7 +32,7 @@ img.ArticleListItem_img {
 }
 
 .ArticleListItem_info {
-  padding: 20px;
+  /* padding: 20px; */
   height:150px;
   width: 150px;
   z-index:2;
