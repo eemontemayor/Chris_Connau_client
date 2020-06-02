@@ -13,7 +13,7 @@ overflow: hidden;
 	width: 100%;
 	/* position: relative; */
 	overflow: hidden;
-	align-items: center;
+	/* align-items: center; */
 
 }
 
@@ -46,6 +46,12 @@ overflow: hidden;
 			transform: scale(1.2);
 			/* transition: all 3.5s ease-out; */
 		}
+
+
+		.carousel__image.active:hover {
+			cursor: pointer;
+			
+		}
 		.carousel__image.prev {
 			display:inline-block;
 			height: 300px;
@@ -54,7 +60,7 @@ overflow: hidden;
 			left:-100px;  */
 			object-fit: contain;
 	
-			transform: scale(.9)translateX(-250px);
+			transform: scale(.9)translateX(-240px);
 			transition:all 3s ease;
 			z-index: 1;
 			opacity:.5
@@ -67,7 +73,7 @@ overflow: hidden;
 		
 			object-fit: contain;
 			
-			transform: scale(.9)translateX(250px) ;
+			transform: scale(.9)translateX(240px) ;
 			transition:all 3s ease;
 			z-index: 1;
 			opacity:.5
@@ -88,20 +94,20 @@ overflow: hidden;
 			top:0;
 			bottom:0;
 }
-		.carousel__button:hover {
-			background: rgba(#e71b1b, .8);
-			
+		button.carousel__button:hover {
+			/* background: rgba(#e71b1b, .8); */
+			transform: scale(1.2)
 		}
 
 		button.carousel__button.right{
 			
-			right:50px;
+			right:5px;
 			z-index: 5;
 		}
 
 		button.carousel__button.left{
 			z-index: 5;
-			left:50px;
+			left:5px;
 
 		}
 

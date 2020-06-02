@@ -110,7 +110,7 @@ export default class Carousel extends React.Component{
 					{images.map((img, index) => {
 						let className = 'carousel__image'
 						if (index === currentIndex) className += ' active';
-						if(index === currentIndex -1) className += ' prev';
+						if(index === currentIndex -1 ) className += ' prev';
 						if(index === currentIndex +1) className += ' next';
 						return <img src={img} className={className} key={`img-${index}`} alt = 'carousel img alt -ph' />;
 					})}

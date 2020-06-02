@@ -43,7 +43,7 @@ state = {
             <Hyph />
             <ArticleAuthor article={article} />
           </>}
-          <ArticleCommentCount article={article} />
+          {/* <ArticleCommentCount article={article} /> */}
         </footer>
       </div>
       </Link>
