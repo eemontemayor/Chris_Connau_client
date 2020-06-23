@@ -1,13 +1,13 @@
 .ArticleListPage{
   
     min-height: calc(100vh - 50px);
-    height: fit-content;
+    height: auto;
     width:100%;
     position: relative;
     bottom:0;
     /* overflow: scroll; */
     display: grid;
-    grid-template-rows: 400px 1fr ;
+    grid-template-rows: 500px 1fr ;
     grid-template-areas: 
     'carousel'
     'list';
@@ -17,12 +17,12 @@
 
 
 .Carousel{
-    /* margin: 40px; */
+   
     grid-area: carousel;
     position: fixed;
     width: 100%;
-    /* text-align: center; */
-    height: 400px;
+  
+    height: 450px;
 
 }
 .ArticleListContainer{
@@ -36,9 +36,9 @@ background-color: black;
 }
 .ArticleList_Title{
     color: white;
-    margin: 5px;
+    /* margin: 5px; */
 }
-.ArticleList{
+ul.ArticleList{
    
     display: inline-flex;
     flex-direction: row;

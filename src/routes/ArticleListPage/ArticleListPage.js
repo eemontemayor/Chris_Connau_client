@@ -131,28 +131,6 @@ export default class ArticleListPage extends Component {
            
           </ul>
     
-       
-
-          {/* <Section>
-            <h2 className="GalleryListTitle">Nature</h2>
-            <ul className="GalleryList">
-              {error ? (
-                <p className="red">There was an error, try again</p>
-              ) : (
-                this.renderGalleryList(gallImages[0],'nature')
-              )}
-            </ul>
-          </Section>
-          <Section>
-            <h2 className="GalleryListTitle">Architecture</h2>
-            <ul className="GalleryList">
-              {error ? (
-                <p className="red">There was an error, try again</p>
-              ) : (
-                this.renderGalleryList(gallImages[1],'architecture')
-              )}
-            </ul>
-          </Section> */}
         </div>
       </div>
     );

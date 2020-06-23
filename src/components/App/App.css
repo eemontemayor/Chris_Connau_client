@@ -17,4 +17,5 @@
 .App__main {
   height: calc(100vh - 50px);
   width: 100vw;
+ 
 }

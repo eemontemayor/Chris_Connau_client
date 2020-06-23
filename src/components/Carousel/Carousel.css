@@ -1,126 +1,112 @@
-
 .carousel__wrapper {
-	height: 400px;
-	width: 100%;
-display: inline-flex;
-overflow: hidden;
+  height: 400px;
+  width: 100%;
+  display: inline-flex;
+ 
+
 }
 
-
-
 .carousel__container {
-	height: 400px;
-	width: 100%;
-	/* position: relative; */
-	overflow: hidden;
-	/* align-items: center; */
+  height: 400px;
+  width: 100%;
+
 
 }
 
 .carousel__image {
-	
-	display: none;
-	opacity: 0;
-	height: 300px;
-	margin: auto;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top:0;
-	/* transform: scale(.95); */
-	/* transition: all 1s linear; */
-	/* transition: all 3.5s ease-out; */
-	z-index: 0;
-	
+
+  display: none;
+  opacity: 0;
+  height: 300px;
+  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100px;
+  /* transform: scale(.95); */
+  /* transition: all 1s linear; */
+  /* transition: all 3.5s ease-out; */
+  z-index: 0;
 }
-		.carousel__image.active {
-			display: inline-block;
-			height: 400px;
-			/* width: 500px; */
-			
-			object-fit: contain;
+.carousel__image.active {
+  display: inline-block;
+  height: 400px;
+  /* width: 500px; */
 	
-			opacity: 1;
-	
-			z-index:3;
-			transform: scale(1.2);
-			/* transition: all 3.5s ease-out; */
-		}
+  object-fit: contain;
 
+  opacity: 1;
 
-		.carousel__image.active:hover {
-			cursor: pointer;
-			
-		}
-		.carousel__image.prev {
-			display:inline-block;
-			height: 300px;
-			 /* position: relative;
-			 top:-50px;
-			left:-100px;  */
-			object-fit: contain;
-	
-			transform: scale(.9)translateX(-240px);
-			transition:all 3s ease;
-			z-index: 1;
-			opacity:.5
+  z-index: 3;
+  transform: scale(1.2);
+  /* transition: all 3.5s ease-out; */
+}
 
-		}
-		.carousel__image.next {
-			display:inline-block;
-			height: 300px;
+.carousel__image.active:hover {
+  cursor: pointer;
+}
+.carousel__image.prev {
+  display: inline-block;
+  height: 300px;
 
-		
-			object-fit: contain;
-			
-			transform: scale(.9)translateX(240px) ;
-			transition:all 3s ease;
-			z-index: 1;
-			opacity:.5
+  object-fit: contain;
 
-		}
+  transform: scale(0.9) translateX(-240px);
+  transition: all 3s ease;
+  z-index: 1;
+  opacity: 0.5;
+}
+.carousel__image.next {
+  display: inline-block;
+  height: 300px;
+
+  object-fit: contain;
+
+  transform: scale(0.9) translateX(240px);
+  transition: all 3s ease;
+  z-index: 1;
+  opacity: 0.5;
+}
 
 .carousel__button {
-	background:none;
-	border: 0;
-	color: purple;
-	cursor: pointer;
-	font-size: 2rem;
-	flex-grow: 1;
-	outline: none;
-	padding: 1rem;
-	transition: all .1s ease-out;
-	position: absolute;
-			top:0;
-			bottom:0;
+  background: none;
+  border: 0;
+  color: purple;
+  cursor: pointer;
+  font-size: 2rem;
+  flex-grow: 1;
+  outline: none;
+  padding: 1rem;
+  transition: all 0.1s ease-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
-		button.carousel__button:hover {
-			/* background: rgba(#e71b1b, .8); */
-			transform: scale(1.2)
-		}
+button.carousel__button:hover {
+  /* background: rgba(#e71b1b, .8); */
+  transform: scale(1.2);
+}
 
-		button.carousel__button.right{
-			
-			right:5px;
-			z-index: 5;
-		}
+button.carousel__button.right {
+  right: 5px;
+  z-index: 5;
+}
 
-		button.carousel__button.left{
-			z-index: 5;
-			left:5px;
-
-		}
+button.carousel__button.left {
+  z-index: 5;
+  left: 5px;
+}
 
 .flavor-text {
-	display: block;
-	color: rgba(#fff, .5);
-	font-size: .75rem;
-	font-weight: 300;
-	letter-spacing: 2px;
-	line-height: 1.5;
-	margin: 1rem auto;
-	max-width: 100%;
-	text-align: center;
-	text-transform: uppercase;
-	width: 15rem;
+  display: block;
+  color: rgba(#fff, 0.5);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 1rem auto;
+  max-width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 15rem;
 }
