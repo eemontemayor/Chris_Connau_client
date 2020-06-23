@@ -25,6 +25,23 @@ const ArticleApiService = {
           : res.json()
       )
   },
+  postNewArticle(article) {
+    return fetch(`${config.API_ENDPOINT}/article`, {
+      method: 'POST',
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+      article
+      }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
   getArticleComments(articleId) {
     return fetch(`${config.API_ENDPOINT}/articles/${articleId}/comments`, {
       headers: {
