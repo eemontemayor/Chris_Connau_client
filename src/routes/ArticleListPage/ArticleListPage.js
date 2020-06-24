@@ -33,7 +33,7 @@ export default class ArticleListPage extends Component {
       listCategories.push(k)
         }
         this.setState({listCategories},()=>{
-      
+      console.log('this.state', this.context)
           this.context.setArticleList(list)})
         })
       .catch(this.context.setError);

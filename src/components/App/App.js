@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Switch } from 'react-router-dom'
+import { Switch, Link } from 'react-router-dom'
 import Header from '../Header/Header'
-// import PrivateRoute from '../Utils/PrivateRoute'
+import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import ArticleListPage from '../../routes/ArticleListPage/ArticleListPage'
 import ArticlePage from '../../routes/ArticlePage/ArticlePage'
@@ -50,20 +50,27 @@ class App extends Component {
               path={'/login'}
               component={LoginPage}
             />
-            <PublicOnlyRoute
+            {/* <PublicOnlyRoute
               path={'/register'}
               component={RegistrationPage}
-            />
+            /> */}
             <PublicOnlyRoute
               path={'/article/:articleId'}
               component={ArticlePage} 
               
             />
+        <PublicOnlyRoute
+          path={'/login'}
+          component={LoginPage}
+        />
             <PublicOnlyRoute
               component={NotFoundPage}
             />
           </Switch>
         </main>
+        {/* <footer>
+          <Link to='/login'>:)</Link>
+        </footer> */}
       </div>
     )
   }
